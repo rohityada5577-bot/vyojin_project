@@ -20,7 +20,7 @@ function activeNav($key,$rp){ return ($rp==='/'.$key || ($key==='collection' && 
   <div class="header-top">
     <div class="header-side header-side-left">
       <a class="top-pill active" href="/collection">WOMEN</a>
-      <a href="/wedding">BRIDAL</a>
+      <a href="/wedding">MEN</a>
       <a href="/collection?filter=luxe">LUXE</a>
     </div>
     <a class="brand" href="/" aria-label="Vyojin home"><img src="/assets/logo/vyojin-logo.png" alt="Vyojin"></a>
