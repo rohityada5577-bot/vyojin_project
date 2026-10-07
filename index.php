@@ -43,8 +43,7 @@ function render_home(){
 <section class="hero" data-hero>
  <div class="hero-track">
   <?php foreach([['hero-1.jpeg','Festive dressing, reimagined.','Explore Diwali Luxe','/diwali'],['hero-2.jpeg','The celebration edit.','Shop Festive','/festive'],['hero-3.jpeg','New season. New silhouettes.','New Arrivals','/new']] as $i=>$s): ?>
-  <article class="hero-slide"><img src="/assets/hero/<?=$s[0]?>" alt="<?=h($s[1])?>" loading="<?=$i?'lazy':'eager'?>"><div class="hero-copy"><h1><?=h($s[1])?></h1><p>Contemporary Indian fashion for every memorable occasion.</p><a href="<?=$s[3]?>"><?=$s[2]?> ↗</a></div></article>
-  <?php endforeach; ?>
+<article class="hero-slide"><img src="/assets/hero/<?=$s[0]?>" alt="<?=h($s[1])?>" loading="<?=$i?'lazy':'eager'?>"><div class="hero-copy"><h1 class="sr-only"><?=h($s[1])?></h1><a href="<?=$s[3]?>"><?=$s[2]?> ↗</a></div></article>  <?php endforeach; ?>
  </div>
  <button class="hero-arrow hero-prev" type="button" aria-label="Previous">‹</button><button class="hero-arrow hero-next" type="button" aria-label="Next">›</button>
  <div class="hero-dots"><?php for($i=0;$i<3;$i++): ?><button class="<?=$i===0?'active':''?>" data-hero-dot="<?=$i?>" type="button"></button><?php endfor; ?></div>

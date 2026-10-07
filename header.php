@@ -3,7 +3,7 @@ require_once __DIR__.'/lib/helpers.php';
 $rp=route_path();
 $nav=[
  ['Ready To Ship','/ready-to-ship','ready-to-ship'],
- ['Diwali Luxe','/diwali','diwali'],
+ ['Diwali','/diwali','diwali'],
  ['Sarees','/sarees','sarees'],
  ['Salwar Kameez','/salwar-kameez','salwar-kameez'],
  ['Lehenga','/lehenga','lehenga'],
@@ -20,7 +20,7 @@ function activeNav($key,$rp){ return ($rp==='/'.$key || ($key==='collection' && 
   <div class="header-top">
     <div class="header-side header-side-left">
       <a class="top-pill active" href="/collection">WOMEN</a>
-      <a href="/wedding">WOMEN</a>
+      <a href="/wedding">MEN</a>
       <a href="/collection?filter=luxe">LUXE</a>
     </div>
     <a class="brand" href="/" aria-label="Vyojin home"><img src="/assets/logo/vyojin-logo.png" alt="Vyojin"></a>

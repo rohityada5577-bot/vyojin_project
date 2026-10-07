@@ -30,3 +30,12 @@
 @media(max-width:430px){.icon-link{width:24px}.header-actions{gap:2px}.hero-copy p{font-size:11px}.hero-copy a{padding:9px 15px}.category-hero{height:235px}.category-hero-content{left:5%;right:5%}.category-hero-content h1{font-size:31px}.category-hero-content p{font-size:12px}.product-info .product-name{font-size:11px}.product-info .product-price{font-size:11px}.gallery{grid-template-columns:55px 1fr}.product-cta{grid-template-columns:1fr}.page-title{font-size:30px}}
 
 .mobile-close-filter{display:none}@media(max-width:780px){.mobile-close-filter{display:block;margin-bottom:15px}}
+.sr-only{
+  position:absolute;
+  width:1px;height:1px;
+  padding:0;margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
