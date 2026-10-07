@@ -1,0 +1,79 @@
+{
+  "royal-blue": [
+    "assets/sections/products/royal-blue/1.jpg",
+    "assets/sections/products/royal-blue/2.jpg",
+    "assets/sections/products/royal-blue/3.jpg",
+    "assets/sections/products/royal-blue/4.jpg",
+    "assets/sections/products/royal-blue/5.jpg"
+  ],
+  "sunshine-yellow": [
+    "assets/sections/products/sunshine-yellow/1.jpg",
+    "assets/sections/products/sunshine-yellow/2.jpg",
+    "assets/sections/products/sunshine-yellow/3.jpg",
+    "assets/sections/products/sunshine-yellow/4.jpg",
+    "assets/sections/products/sunshine-yellow/5.jpg"
+  ],
+  "teal-maroon": [
+    "assets/sections/products/teal-maroon/1.jpg",
+    "assets/sections/products/teal-maroon/2.jpg",
+    "assets/sections/products/teal-maroon/3.jpg",
+    "assets/sections/products/teal-maroon/4.jpg",
+    "assets/sections/products/teal-maroon/5.jpg"
+  ],
+  "orange-bandhani": [
+    "assets/sections/products/orange-bandhani/1.jpg",
+    "assets/sections/products/orange-bandhani/2.jpg",
+    "assets/sections/products/orange-bandhani/3.jpg",
+    "assets/sections/products/orange-bandhani/4.jpg",
+    "assets/sections/products/orange-bandhani/5.jpg"
+  ],
+  "blue-floral": [
+    "assets/sections/products/blue-floral/1.jpg",
+    "assets/sections/products/blue-floral/2.jpg",
+    "assets/sections/products/blue-floral/3.jpg",
+    "assets/sections/products/blue-floral/4.jpg",
+    "assets/sections/products/blue-floral/5.jpg"
+  ],
+  "black-white": [
+    "assets/sections/products/black-white/1.jpg",
+    "assets/sections/products/black-white/2.jpg",
+    "assets/sections/products/black-white/3.jpg",
+    "assets/sections/products/black-white/4.jpg",
+    "assets/sections/products/black-white/5.jpg"
+  ],
+  "green-floral": [
+    "assets/sections/products/green-floral/1.jpg",
+    "assets/sections/products/green-floral/2.jpg",
+    "assets/sections/products/green-floral/3.jpg",
+    "assets/sections/products/green-floral/4.jpg",
+    "assets/sections/products/green-floral/5.jpg"
+  ],
+  "black-multicolour": [
+    "assets/sections/products/black-multicolour/1.jpg",
+    "assets/sections/products/black-multicolour/2.jpg",
+    "assets/sections/products/black-multicolour/3.jpg",
+    "assets/sections/products/black-multicolour/4.jpg",
+    "assets/sections/products/black-multicolour/5.jpg"
+  ],
+  "navy-blue": [
+    "assets/sections/products/navy-blue/1.jpg",
+    "assets/sections/products/navy-blue/2.jpg",
+    "assets/sections/products/navy-blue/3.jpg",
+    "assets/sections/products/navy-blue/4.jpg",
+    "assets/sections/products/navy-blue/5.jpg"
+  ],
+  "red-bandhani": [
+    "assets/sections/products/red-bandhani/1.jpg",
+    "assets/sections/products/red-bandhani/2.jpg",
+    "assets/sections/products/red-bandhani/3.jpg",
+    "assets/sections/products/red-bandhani/4.jpg",
+    "assets/sections/products/red-bandhani/5.jpg"
+  ],
+  "emerald-green": [
+    "assets/sections/products/emerald-green/1.jpg",
+    "assets/sections/products/emerald-green/2.jpg",
+    "assets/sections/products/emerald-green/3.jpg",
+    "assets/sections/products/emerald-green/4.jpg",
+    "assets/sections/products/emerald-green/5.jpg"
+  ]
+}
