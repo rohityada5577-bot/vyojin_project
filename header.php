@@ -14,7 +14,7 @@ $nav=[
  ['Collection','/collection','collection'],
  ['Sale','/sale','sale'],
 ];
-function activeNav($key,$rp){ return ($rp==='/'.$key || ($key==='collection' && $rp==='/collection')) ? ' active' : ''; }
+$disabled=array_column($nav,2); // saglya menu items band; ek-ek chalu karaychi asel tar he list lihaa, udaharan ['sale']function activeNav($key,$rp){ return ($rp==='/'.$key || ($key==='collection' && $rp==='/collection')) ? ' active' : ''; }
 ?>
 <header class="site-header">
   <div class="header-top">
@@ -39,13 +39,23 @@ function activeNav($key,$rp){ return ($rp==='/'.$key || ($key==='collection' && 
   </div>
   <nav class="main-nav" aria-label="Main navigation">
     <?php foreach($nav as [$label,$href,$key]): ?>
-      <a class="nav-link<?=activeNav($key,$rp)?>" href="<?=$href?>"><?=$label?></a>
+      <?php if(in_array($key,$disabled,true)): ?>
+        <span class="nav-link is-disabled" aria-disabled="true" title="Coming soon"><?=$label?></span>
+      <?php else: ?>
+        <a class="nav-link<?=activeNav($key,$rp)?>" href="<?=$href?>"><?=$label?></a>
+      <?php endif; ?>
     <?php endforeach; ?>
   </nav>
   <div class="mobile-drawer" aria-hidden="true">
     <div class="mobile-drawer-head"><strong>SHOP</strong><button class="mobile-menu-close" type="button" aria-label="Close menu">×</button></div>
     <div class="mobile-links">
-      <?php foreach($nav as [$label,$href,$key]): ?><a class="<?=activeNav($key,$rp)?>" href="<?=$href?>"><?=$label?></a><?php endforeach; ?>
+      <?php foreach($nav as [$label,$href,$key]): ?>
+        <?php if(in_array($key,$disabled,true)): ?>
+          <span class="is-disabled" aria-disabled="true"><?=$label?></span>
+        <?php else: ?>
+          <a class="<?=activeNav($key,$rp)?>" href="<?=$href?>"><?=$label?></a>
+        <?php endif; ?>
+      <?php endforeach; ?>
       <a href="/search">Search</a><a href="/account">Account</a><a href="/wishlist">Wishlist</a><a href="/cart">Bag</a>
     </div>
   </div>

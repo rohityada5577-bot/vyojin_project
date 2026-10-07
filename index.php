@@ -48,7 +48,7 @@ function render_home(){
  <button class="hero-arrow hero-prev" type="button" aria-label="Previous">‹</button><button class="hero-arrow hero-next" type="button" aria-label="Next">›</button>
  <div class="hero-dots"><?php for($i=0;$i<3;$i++): ?><button class="<?=$i===0?'active':''?>" data-hero-dot="<?=$i?>" type="button"></button><?php endfor; ?></div>
 </section>
-<div class="announcement"><span>Designed for celebrations. Made for the modern Indian wardrobe.</span><a href="/new">SHOP NEW</a></div>
+<div class="announcement"><span>Designed for celebrations. Made for the modern Indian wardrobe. </span><a href="/new">SHOP NEW</a></div>
 <div class="services">
  <?php foreach([['01','24-Hour Dispatch','Fast & carefully packed'],['02','Easy Returns','Simple & stress-free'],['03','Personal Styling','Assistance when you need it'],['04','Secure Checkout','Safe and simple shopping']] as $x): ?>
  <div class="service"><strong><?=$x[0]?></strong><div><b><?=h($x[1])?></b><span><?=h($x[2])?></span></div></div>
