@@ -10,26 +10,26 @@ if (function_exists('all_products')) {   // <- change to your real helper name
     }
 }
 if (!$search_names) {
-    $search_names = ['Silk Saree','Lehenga','Anarkali Suit','Indo Western Gown','Diwali Kurta Set', 'Dresses'];
+    $search_names = ['Silk Saree','Lehenga','Anarkali Suit','Indo Western Gown','Diwali Kurta Set', ];
 }
 shuffle($search_names);
 $search_names = array_slice($search_names, 0, 30);
 
 $nav=[
- ['Ready To Ship','/ready-to-ship','ready-to-ship'],
- ['Diwali','/diwali','diwali'],
+ ['Dispatch Ready','/ready-to-ship','ready-to-ship'],
+ ['Statement Edit','/diwali','diwali'],
  ['Sarees','/sarees','sarees'],
- ['Salwar Kameez','/salwar-kameez','salwar-kameez'],
+ ['Classic Suits','/salwar-kameez','salwar-kameez'],
  ['Lehenga','/lehenga','lehenga'],
  ['Indo Western','/indo-western','indo-western'],
  ['Best Sellers','/best-sellers','best-sellers'],
  ['New','/new','new'],
- ['Wedding','/wedding','wedding'],
+ ['Festive Elegance','/wedding','wedding'],
  ['Collection','/collection','collection'],
  ['Sale','/sale','sale'],
 ];
-$disabled=array_column($nav,2); // all menu items disabled; to enable one, list only the disabled ones, e.g. ['sale']
-function activeNav($key,$rp){ return ($rp==='/'.$key || ($key==='collection' && $rp==='/collection')) ? ' active' : ''; }?>
+function activeNav($key,$rp){ return ($rp==='/'.$key || ($key==='collection' && $rp==='/collection')) ? ' active' : ''; }
+?>
 <header class="site-header">
   <div class="header-top">
     <div class="header-side header-side-left">
@@ -51,27 +51,19 @@ function activeNav($key,$rp){ return ($rp==='/'.$key || ($key==='collection' && 
       <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
-  <nav class="main-nav" aria-label="Main navigation">
-    <?php foreach($nav as [$label,$href,$key]): ?>
-      <?php if(in_array($key,$disabled,true)): ?>
-        <span class="nav-link is-disabled" aria-disabled="true" title="Coming soon"><?=$label?></span>
-      <?php else: ?>
-        <a class="nav-link<?=activeNav($key,$rp)?>" href="<?=$href?>"><?=$label?></a>
-      <?php endif; ?>
-    <?php endforeach; ?>
-  </nav>
+<nav class="main-nav" aria-label="Main navigation">
+  <?php foreach($nav as [$label,$href,$key]): ?>
+    <a class="nav-link<?=activeNav($key,$rp)?>" href="<?=$href?>"><?=$label?></a>
+  <?php endforeach; ?>
+</nav>
   <div class="mobile-drawer" aria-hidden="true">
     <div class="mobile-drawer-head"><strong>SHOP</strong><button class="mobile-menu-close" type="button" aria-label="Close menu">×</button></div>
-    <div class="mobile-links">
-      <?php foreach($nav as [$label,$href,$key]): ?>
-        <?php if(in_array($key,$disabled,true)): ?>
-          <span class="is-disabled" aria-disabled="true"><?=$label?></span>
-        <?php else: ?>
-          <a class="<?=activeNav($key,$rp)?>" href="<?=$href?>"><?=$label?></a>
-        <?php endif; ?>
-      <?php endforeach; ?>
-      <a href="/search">Search</a><a href="/account">Account</a><a href="/wishlist">Wishlist</a><a href="/cart">Bag</a>
-    </div>
+<div class="mobile-links">
+  <?php foreach($nav as [$label,$href,$key]): ?>
+    <a class="<?=activeNav($key,$rp)?>" href="<?=$href?>"><?=$label?></a>
+  <?php endforeach; ?>
+  <a href="/search">Search</a><a href="/account">Account</a><a href="/wishlist">Wishlist</a><a href="/cart">Bag</a>
+</div>
   </div>
   <div class="mobile-backdrop"></div>
 

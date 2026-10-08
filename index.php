@@ -86,7 +86,7 @@ function render_home(){
  <div class="section-heading"><span class="eyebrow">Shop by mood</span><h2>Curated For You</h2><p>Discover the silhouettes that define the Vyojin wardrobe, from everyday elegance to the season's biggest celebrations.</p></div>
  <div class="category-grid">
  <?php
- $cats=[['sarees','Sarees','assets/sections/products/green-floral/1.webp'],['salwar-kameez','Salwar Kameez','assets/sections/products/emerald-green/1.webp'],['lehenga','Lehenga','assets/sections/products/red-and-white-printed-festive-lehenga/1.webp'],['indo-western','Indo Western','assets/sections/products/black-multicolour/1.webp'],['wedding','Wedding','assets/sections/products/navy-blue-multicolour-mirror-work-lehenga/1.webp'],['diwali','Diwali Luxe','assets/hero/hero-2.jpeg']];
+ $cats=[['sarees','Sarees','assets/sections/new-arrivals/2.jpeg'],['salwar-kameez','Classic Suits','assets/sections/new-arrivals/21.jpeg'],['lehenga','Lehenga','assets/sections/new-arrivals/8.jpeg'],['indo-western','Indo Western','assets/sections/new-arrivals/14.jpeg'],['wedding','festive elegance','assets/sections/new-arrivals/20.jpeg'],['diwali','Statement Edit','assets/sections/new-arrivals/23.jpeg']];
  foreach($cats as $c): ?><a class="category-card" href="/<?=$c[0]?>"><img src="/<?=$c[2]?>" alt="<?=$c[1]?>"><div><strong><?=$c[1]?></strong><span>Shop now ↗</span></div></a><?php endforeach; ?>
  </div>
 </section>
@@ -119,12 +119,12 @@ foreach($sections as [$key,$label]):
  </div>
 </section>
 
-<section class="home-section">
+<!-- <section class="home-section">
  <div class="section-heading"><span class="eyebrow">Explore Vyojin</span><h2>Dress the Occasion</h2></div>
  <div class="category-grid">
- <?php foreach([['chaniya-choli','Chaniya Choli','assets/sections/products/teal-blue-festive-chaniya-choli/1.webp'],['festive','Festive','assets/hero/hero-1.jpeg'],['new','New Arrivals','assets/hero/hero-3.jpeg'],['best-sellers','Best Sellers','assets/sections/products/royal-blue/1.webp'],['ready-to-ship','Ready to Ship','assets/sections/products/black-white/1.webp'],['sale','Sale','assets/sections/products/pink-multicolour-festive-lehenga/1.webp']] as $c): ?><a class="category-card" href="/<?=$c[0]?>"><img src="/<?=$c[2]?>" alt="<?=h($c[1])?>"><div><strong><?=h($c[1])?></strong><span>Explore ↗</span></div></a><?php endforeach; ?>
- </div>
-</section>
+ <?php foreach([['chaniya-choli','Chaniya Choli','assets/sections/products/teal-blue-festive-chaniya-choli/1.webp'],['festive','Festive','assets/hero/hero-1.jpeg'],['new','New Arrivals','assets/hero/hero-3.jpeg'],['best-sellers','Best Sellers','assets/sections/products/royal-blue/1.webp'],['ready-to-ship','Ready to Ship','assets/sections/products/black-white/1.webp'],['sale','Sale','assets/sections/products/pink-multicolour-festive-lehenga/1.webp']] as $c): ?><a class="category-card" href="/<?=$c[0]?>"><img src="/<?=$c[2]?>" alt="<?=h($c[1])?>"><div><strong><?=h($c[1])?></strong><span>Explore ↗</span></div></a><?php endforeach; ?> -->
+ <!-- </div>
+</section> -->
 </main>
 <?php render_foot(); }
 

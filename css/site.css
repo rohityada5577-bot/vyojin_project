@@ -1409,13 +1409,6 @@ img {
   white-space: nowrap;
   border: 0;
 }
-.is-disabled {
-  opacity: 1;
-  color: #111;
-  cursor: default;
-  pointer-events: none;
-  user-select: none;
-}
 /* =========================================================
    VYOJIN — PREMIUM FOOTER
    Works with EXISTING footer HTML
@@ -2581,8 +2574,8 @@ img {
 .vj-trust + .home-section,
 main > .home-section:last-of-type{
   padding:80px 0 90px;
-  background:#fbf6ea;
-  box-shadow:0 0 0 100vmax #fbf6ea;
+  background:#fff;
+  box-shadow:0 0 0 100vmax #fff;
   clip-path:inset(0 -100vmax);
 }
 .vj-trust + .home-section{margin-top:0}
@@ -2725,7 +2718,7 @@ main > .home-section:last-of-type{
   .product-name{font-size:14px}
 }
 /* ===== Floral decoration pinned to the screen edges ===== */
-body{overflow-x:clip}
+/* body{overflow-x:clip}
 
 .vj-trust + .home-section,
 main > .home-section:last-of-type{
@@ -2750,20 +2743,20 @@ main > .home-section:last-of-type::after{
   opacity:.95;
   pointer-events:none;
   z-index:0;
-}
+} */
 
 /* right edge of the screen */
-.vj-trust + .home-section::before,
+/* .vj-trust + .home-section::before,
 main > .home-section:last-of-type::before{
   right:calc(50% - 50vw);
-}
+} */
 
 /* left edge of the screen (mirrored) */
-.vj-trust + .home-section::after,
+/* .vj-trust + .home-section::after,
 main > .home-section:last-of-type::after{
   left:calc(50% - 50vw);
   transform:scaleX(-1);
-}
+} */
 
 /* not enough side space on smaller screens, so hide it */
 @media (max-width:1400px){
@@ -2778,13 +2771,14 @@ main > .home-section:last-of-type::after{
 
 /* ---------- Dark band: New Arrivals only ---------- */
 /* ---------- Blush pink band: New Arrivals only ---------- */
+
 .vj-trust + .home-section + .home-section{
   --ink:#2a1d0a;
   --sub:#7a6a4a;
   position:relative;
   padding:90px 0 100px;
-  background:#f6e9e4;
-  box-shadow:0 0 0 100vmax #f6e9e4;
+  background:#fff;
+  box-shadow:0 0 0 100vmax #fff;
   clip-path:inset(0 -100vmax);
 }
 .vj-trust + .home-section + .home-section .section-heading h2{color:#f3ead8}
@@ -2933,11 +2927,9 @@ main > .home-section .product-strip .product-card:hover .product-link{
 .vj-trust + .home-section + .home-section .section-heading .eyebrow{color:#a8823e}
 .vj-trust + .home-section + .home-section .section-heading p{color:#777}
 /* make the cream band and the blush pink band touch */
+/* make the cream band and the blush pink band touch */
 .vj-trust + .home-section{margin-bottom:0}
 .vj-trust + .home-section + .home-section{margin-top:0}
-.vj-trust + .home-section + .home-section{
-  border-top:1px solid rgba(201,164,92,.55);
-}
 /* =========================================================
    BEST SELLERS (3rd section)  +  SALE EDIT (4th section)
 ========================================================= */
@@ -2974,29 +2966,9 @@ main > .home-section .product-strip .product-card:hover .product-link{
   text-transform:uppercase;
 }
 
-/* big ranking number, half on the photo and half below */
-.vj-trust + .home-section + .home-section + .home-section .product-strip .product-image::after,
-.vj-trust + .home-section + .home-section + .home-section .product-strip .product-card:hover .product-image::after{
-  display:block;
-  content:counter(vj);
-  position:absolute;
-  inset:auto;
-  left:50%;
-  bottom:-48px;
-  width:auto;height:auto;
-  transform:translateX(-50%);
-  border:0;
-  opacity:1;
-  z-index:5;
-  font-family:VyojinNY,Georgia,serif;
-  font-size:92px;
-  line-height:1;
-  color:#fff;
-  -webkit-text-stroke:1px #c9a45c;
-  pointer-events:none;
-}
 
-.vj-trust + .home-section + .home-section + .home-section .product-strip .product-info{padding:64px 4px 0}
+
+.vj-trust + .home-section + .home-section + .home-section .product-strip .product-info{padding:22px 4px 0}
 .vj-trust + .home-section + .home-section + .home-section .product-strip .product-info::before{display:none}
 .vj-trust + .home-section + .home-section + .home-section .product-strip .product-price{color:#8a6a2c}
 
@@ -3014,21 +2986,20 @@ main > .home-section .product-strip .product-card:hover .product-link{
   color:#e8c887;
   gap:16px;
 }
-
-/* ---------------- SALE EDIT: maroon band, horizontal cards ---------------- */
+/* ---------------- SALE EDIT: white band, horizontal cards ---------------- */
 .vj-trust + .home-section + .home-section + .home-section + .home-section{
-  --ink:#f6ece0;
-  --sub:#d9bfb4;
+  --ink:#1a1208;
+  --sub:#7a6a4a;
   position:relative;
   margin-top:0;
   margin-bottom:0;
   padding:90px 0 100px;
-  background:#3a1220;
-  box-shadow:0 0 0 100vmax #3a1220;
+  background:#fff;
+  box-shadow:0 0 0 100vmax #fff;
   clip-path:inset(0 -100vmax);
 }
-.vj-trust + .home-section + .home-section + .home-section + .home-section .section-heading h2{color:#f6ece0}
-.vj-trust + .home-section + .home-section + .home-section + .home-section .section-heading .eyebrow{color:#e8c887}
+.vj-trust + .home-section + .home-section + .home-section + .home-section .section-heading h2{color:#1a1208}
+.vj-trust + .home-section + .home-section + .home-section + .home-section .section-heading .eyebrow{color:#a8823e}
 
 .vj-trust + .home-section + .home-section + .home-section + .home-section .product-strip{
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -3037,13 +3008,14 @@ main > .home-section .product-strip .product-card:hover .product-link{
 .vj-trust + .home-section + .home-section + .home-section + .home-section .product-strip .product-card{
   padding:16px;
   text-align:left;
-  background:rgba(255,255,255,.05);
+  background:#fff;
   border:1px solid rgba(201,164,92,.5);
-  transition:border-color .4s ease,background .4s ease;
+  transition:border-color .4s ease,box-shadow .4s ease;
 }
 .vj-trust + .home-section + .home-section + .home-section + .home-section .product-strip .product-card:hover{
-  background:rgba(255,255,255,.09);
-  border:1px solid #e8c887;
+  background:#fff;
+  border:1px solid #c9a45c;
+  box-shadow:0 18px 40px rgba(120,85,20,.15);
 }
 .vj-trust + .home-section + .home-section + .home-section + .home-section .product-strip .product-card::before{display:none}
 .vj-trust + .home-section + .home-section + .home-section + .home-section .product-strip .product-card a{
@@ -3065,7 +3037,7 @@ main > .home-section .product-strip .product-card:hover .product-link{
   font-size:11px;
   letter-spacing:.3em;
   text-transform:uppercase;
-  color:#e8c887;
+  color:#a8823e;
 }
 .vj-trust + .home-section + .home-section + .home-section + .home-section .product-strip .product-name{
   min-height:0;
@@ -3075,27 +3047,28 @@ main > .home-section .product-strip .product-card:hover .product-link{
 .vj-trust + .home-section + .home-section + .home-section + .home-section .product-strip .product-price{
   margin-top:14px;
   font-size:22px;
-  color:#e8c887;
+  color:#8a6a2c;
 }
 .vj-trust + .home-section + .home-section + .home-section + .home-section .product-strip .product-price del{
   margin-left:10px;
   font-size:14px;
-  color:#d9bfb4;
+  color:#999;
 }
 .vj-trust + .home-section + .home-section + .home-section + .home-section .product-strip .sale-tag{
-  background:#e8c887;
-  color:#3a1220;
+  background:#14100b;
+  color:#e8c887;
 }
 .vj-trust + .home-section + .home-section + .home-section + .home-section .product-strip .product-link{
   margin-top:22px;
   padding:12px 24px;
-  border:1px solid #e8c887;
-  color:#e8c887;
+  border:1px solid #c9a45c;
+  color:#6b5320;
   transition:background .35s ease,color .35s ease,gap .35s ease;
 }
 .vj-trust + .home-section + .home-section + .home-section + .home-section .product-strip .product-card:hover .product-link{
-  background:#e8c887;
-  color:#3a1220;
+  background:#14100b;
+  border-color:#14100b;
+  color:#e8c887;
   gap:18px;
 }
 
@@ -3105,11 +3078,7 @@ main > .home-section .product-strip .product-card:hover .product-link{
 }
 @media (max-width:780px){
   .vj-trust + .home-section + .home-section + .home-section .product-strip{gap:34px 14px}
-  .vj-trust + .home-section + .home-section + .home-section .product-strip .product-image::after,
-  .vj-trust + .home-section + .home-section + .home-section .product-strip .product-card:hover .product-image::after{
-    font-size:58px;bottom:-30px;
-  }
-  .vj-trust + .home-section + .home-section + .home-section .product-strip .product-info{padding-top:42px}
+  .vj-trust + .home-section + .home-section + .home-section .product-strip .product-info{padding-top:18px}
   .vj-trust + .home-section + .home-section + .home-section + .home-section{padding:56px 0 64px}
   .vj-trust + .home-section + .home-section + .home-section + .home-section .product-strip .product-card a{
     grid-template-columns:40% minmax(0,1fr);
