@@ -59,7 +59,7 @@ function render_home(){
 <main>
 <section class="hero" data-hero>
  <div class="hero-track">
-  <?php foreach([['hero-1.jpeg','Festive dressing, reimagined.','Explore Diwali Luxe','/diwali'],['hero-2.jpeg','The celebration edit.','Shop Festive','/festive'],['hero-3.jpeg','New season. New silhouettes.','New Arrivals','/new']] as $i=>$s): ?>
+  <?php foreach([['hero-1.jpeg','Festive dressing, reimagined.','Explore Diwali Luxe','/diwali'],['hero-2.jpeg','The celebration edit.','Shop Festive','/festive'],['new-image.png','New season. New silhouettes.','New Arrivals','/new']] as $i=>$s): ?>
 <article class="hero-slide"><img src="/assets/hero/<?=$s[0]?>" alt="<?=h($s[1])?>" loading="<?=$i?'lazy':'eager'?>"><div class="hero-copy"><h1 class="sr-only"><?=h($s[1])?></h1><a href="<?=$s[3]?>"><?=$s[2]?> ↗</a></div></article>  <?php endforeach; ?>
  </div>
  <button class="hero-arrow hero-prev" type="button" aria-label="Previous">‹</button><button class="hero-arrow hero-next" type="button" aria-label="Next">›</button>
@@ -105,17 +105,26 @@ foreach($sections as [$key,$label]):
 
 <section class="home-section">
  <div class="editorial">
-<a class="editorial-card" href="/wedding">
-  <video src="/assets/sections/videos/product-video.mp4"
-         autoplay muted loop playsinline preload="metadata"
-         aria-label="Wedding edit"></video>
-  <div>
-    <span class="eyebrow">THE OCCASION EDIT</span>
-    <h3>The Festive Edit</h3>
-    <span>Discover festival dressing ↗</span>
-  </div>
-</a>  
-<a class="editorial-card" href="/ready-to-ship"><img src="/assets/sections/products/black-white/1.webp" alt="Ready to ship"><div><span class="eyebrow">FAST DISPATCH</span><h3>Ready to Ship</h3><span>Shop ready styles ↗</span></div></a>
+  <a class="editorial-card" href="/wedding">
+    <video src="/assets/sections/videos/product-video.mp4"
+           autoplay muted loop playsinline preload="metadata"
+           aria-label="Wedding edit"></video>
+    <div>
+      <span class="eyebrow">THE OCCASION EDIT</span>
+      <h3>The Festive Edit</h3>
+      <span>Discover festival dressing ↗</span>
+    </div>
+  </a>
+  <a class="editorial-card" href="/ready-to-ship">
+    <video src="/assets/sections/videos/product-2-video.mp4"
+           autoplay muted loop playsinline preload="metadata"
+           aria-label="Ready to ship"></video>
+    <div>
+      <span class="eyebrow">FAST DISPATCH</span>
+      <h3>Ready to Ship</h3>
+      <span>Shop ready styles ↗</span>
+    </div>
+  </a>
  </div>
 </section>
 
