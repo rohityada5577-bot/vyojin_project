@@ -199,6 +199,7 @@ function render_product($slug){
   <div class="accordion"><button type="button">Shipping & Returns <span>+</span></button><div>Selected ready-to-ship styles dispatch faster. Returns are available according to the Vyojin returns policy.</div></div>
   <div class="accordion"><button type="button">FAQs <span>+</span></button><div>Need styling help? Visit our contact page for customer support and personal assistance.</div></div>
  </section>
+ 
 </div>
 <section class="home-section"><div class="section-heading"><span class="eyebrow">YOU MAY ALSO LIKE</span><h2>Similar Products</h2></div><div class="product-strip"><?php foreach(array_slice($related,0,4) as $x) product_card($x); ?></div></section>
 </main>
