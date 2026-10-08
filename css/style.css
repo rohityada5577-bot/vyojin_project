@@ -921,3 +921,11 @@
     width: 80px;
     height: 80px;
 }
+.header-search input::placeholder {
+  color: #666;
+  font-size: 13px;
+  opacity: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

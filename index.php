@@ -13,6 +13,23 @@ function render_head($title='Vyojin'){ ?>
 function render_foot(){ ?>
 <div class="toast" id="toast"></div>
 <script src="/js/product.js"></script><script src="/js/site.js"></script>
+<script>
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  var els=document.querySelectorAll('.section-heading,.category-card,.product-card,.editorial-card');
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{threshold:.12});
+  els.forEach(function(el){
+    var idx=Array.prototype.indexOf.call(el.parentNode.children,el);
+    el.style.setProperty('--i',idx%6);
+    el.classList.add('vj-reveal');
+    io.observe(el);
+  });
+})();
+</script>
 <?php include __DIR__.'/footer.php'; ?>
 </body></html>
 <?php }
@@ -49,11 +66,21 @@ function render_home(){
  <div class="hero-dots"><?php for($i=0;$i<3;$i++): ?><button class="<?=$i===0?'active':''?>" data-hero-dot="<?=$i?>" type="button"></button><?php endfor; ?></div>
 </section>
 <div class="announcement"><span>Designed for celebrations. Made for the modern Indian wardrobe. </span><a href="/new">SHOP NEW</a></div>
-<div class="services">
- <?php foreach([['01','24-Hour Dispatch','Fast & carefully packed'],['02','Easy Returns','Simple & stress-free'],['03','Personal Styling','Assistance when you need it'],['04','Secure Checkout','Safe and simple shopping']] as $x): ?>
- <div class="service"><strong><?=$x[0]?></strong><div><b><?=h($x[1])?></b><span><?=h($x[2])?></span></div></div>
+<section class="vj-trust" aria-label="Our promises">
+ <?php
+ $trust=[
+  ['24-Hour Dispatch','Fast & carefully packed','<path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/>'],
+  ['Easy Returns','Simple & stress-free','<path d="M4 12a8 8 0 0 1 14-5.3L20 9M20 4v5h-5M20 12a8 8 0 0 1-14 5.3L4 15M4 20v-5h5"/>'],
+  ['Personal Styling','Assistance when you need it','<circle cx="12" cy="8" r="3.5"/><path d="M5 20c1.2-4 3.6-6 7-6s5.8 2 7 6M19 3v3M17.5 4.5h3"/>'],
+  ['Secure Checkout','Safe and simple shopping','<path d="M12 3 5 6v5c0 4.5 3 8 7 10 4-2 7-5.5 7-10V6z"/><path d="m9 12 2.2 2.2L15.5 10"/>'],
+ ];
+ foreach($trust as $i=>$t): ?>
+ <div class="vj-trust-item" style="--d:<?=$i*0.12?>s">
+  <span class="vj-trust-icon"><svg viewBox="0 0 24 24"><?=$t[2]?></svg></span>
+  <div class="vj-trust-text"><strong><?=h($t[0])?></strong><small><?=h($t[1])?></small></div>
+ </div>
  <?php endforeach; ?>
-</div>
+</section>
 
 <section class="home-section">
  <div class="section-heading"><span class="eyebrow">Shop by mood</span><h2>Curated For You</h2><p>Discover the silhouettes that define the Vyojin wardrobe, from everyday elegance to the season's biggest celebrations.</p></div>
@@ -78,8 +105,17 @@ foreach($sections as [$key,$label]):
 
 <section class="home-section">
  <div class="editorial">
-  <a class="editorial-card" href="/wedding"><img src="/assets/sections/products/navy-blue-multicolour-mirror-work-lehenga/1.webp" alt="Wedding edit"><div><span class="eyebrow">THE OCCASION EDIT</span><h3>The Wedding Edit</h3><span>Discover wedding dressing ↗</span></div></a>
-  <a class="editorial-card" href="/ready-to-ship"><img src="/assets/sections/products/black-white/1.webp" alt="Ready to ship"><div><span class="eyebrow">FAST DISPATCH</span><h3>Ready to Ship</h3><span>Shop ready styles ↗</span></div></a>
+<a class="editorial-card" href="/wedding">
+  <video src="/assets/sections/videos/product-video.mp4"
+         autoplay muted loop playsinline preload="metadata"
+         aria-label="Wedding edit"></video>
+  <div>
+    <span class="eyebrow">THE OCCASION EDIT</span>
+    <h3>The Festive Edit</h3>
+    <span>Discover festival dressing ↗</span>
+  </div>
+</a>  
+<a class="editorial-card" href="/ready-to-ship"><img src="/assets/sections/products/black-white/1.webp" alt="Ready to ship"><div><span class="eyebrow">FAST DISPATCH</span><h3>Ready to Ship</h3><span>Shop ready styles ↗</span></div></a>
  </div>
 </section>
 

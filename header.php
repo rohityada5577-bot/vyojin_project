@@ -1,6 +1,20 @@
 <?php
 require_once __DIR__.'/lib/helpers.php';
 $rp=route_path();
+
+// Product names for the animated placeholder
+$search_names = [];
+if (function_exists('all_products')) {   // <- change to your real helper name
+    foreach (all_products() as $p) {
+        if (!empty($p['name'])) $search_names[] = $p['name'];
+    }
+}
+if (!$search_names) {
+    $search_names = ['Silk Saree','Lehenga','Anarkali Suit','Indo Western Gown','Diwali Kurta Set', 'Dresses'];
+}
+shuffle($search_names);
+$search_names = array_slice($search_names, 0, 30);
+
 $nav=[
  ['Ready To Ship','/ready-to-ship','ready-to-ship'],
  ['Diwali','/diwali','diwali'],
@@ -14,8 +28,8 @@ $nav=[
  ['Collection','/collection','collection'],
  ['Sale','/sale','sale'],
 ];
-$disabled=array_column($nav,2); // saglya menu items band; ek-ek chalu karaychi asel tar he list lihaa, udaharan ['sale']function activeNav($key,$rp){ return ($rp==='/'.$key || ($key==='collection' && $rp==='/collection')) ? ' active' : ''; }
-?>
+$disabled=array_column($nav,2); // all menu items disabled; to enable one, list only the disabled ones, e.g. ['sale']
+function activeNav($key,$rp){ return ($rp==='/'.$key || ($key==='collection' && $rp==='/collection')) ? ' active' : ''; }?>
 <header class="site-header">
   <div class="header-top">
     <div class="header-side header-side-left">
@@ -26,7 +40,7 @@ $disabled=array_column($nav,2); // saglya menu items band; ek-ek chalu karaychi 
     <a class="brand" href="/" aria-label="Vyojin home"><img src="/assets/logo/vyojin-logo.png" alt="Vyojin"></a>
     <div class="header-actions">
       <form class="header-search" action="/search" method="get">
-        <input name="q" aria-label="Search" placeholder="Search" autocomplete="off">
+        <input name="q" id="headerSearchInput" aria-label="Search" placeholder="Search" autocomplete="off">
         <button type="submit" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m16.2 16.2 4.3 4.3"></path></svg></button>
       </form>
       <a class="icon-link desktop-only" href="/contact?channel=visual-search" aria-label="Visual search"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="13" height="14" rx="2"></rect><path d="M8 5V3h8v2M15 15h6M18 12v6"></path></svg></a>
@@ -60,4 +74,36 @@ $disabled=array_column($nav,2); // saglya menu items band; ek-ek chalu karaychi 
     </div>
   </div>
   <div class="mobile-backdrop"></div>
+
+  <script>
+  (function () {
+    var input = document.getElementById('headerSearchInput');
+    if (!input) return;
+
+    var names  = <?= json_encode($search_names, JSON_UNESCAPED_UNICODE) ?>;
+    var prefix = "Search for ";
+    var i = 0, j = 0, deleting = false;
+
+    function tick() {
+      if (document.activeElement === input || input.value) {
+        input.placeholder = "Search";
+        setTimeout(tick, 500);
+        return;
+      }
+      var word = names[i];
+      if (!deleting) {
+        j++;
+        input.placeholder = prefix + word.slice(0, j);
+        if (j === word.length) { deleting = true; setTimeout(tick, 1400); return; }
+        setTimeout(tick, 80);
+      } else {
+        j--;
+        input.placeholder = prefix + word.slice(0, j);
+        if (j === 0) { deleting = false; i = (i + 1) % names.length; setTimeout(tick, 400); return; }
+        setTimeout(tick, 40);
+      }
+    }
+    tick();
+  })();
+  </script>
 </header>
